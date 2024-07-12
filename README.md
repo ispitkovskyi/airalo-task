@@ -8,3 +8,29 @@
 - Open CMD/terminal session, navigate into the repository root directory.
 - Run the "**run.bat**" file (or just run the **mvn surefire-report:report** from the cmd, while being in the project root directory). Project should be compile and tests executed.
 - Navigate into the "<project_root>\target\site" directory, open the **surefire-report.html**
+
+
+# Implementation approach
+## UI "testJapaneseSimPackage" test
+### com/airalo/config  package
+1. DriverFactory - class responsible for instantiating driver.
+2. EnvironmentProperties - class responsible for loading properties from the resources/environment.properties file
+3. HttpClient - provides instance of http client
+### com/airalo/pages  package
+1. Page-object classes - responsible for interactions with web UI of https://www.airalo.com/
+2. Each page class contains action-methods and assertion-methods relevant to respective page (element in page)
+3. PageFactory used for lazy initialization of WebElement objects, using locators provided in @FindBy
+### com/airalo/tests/ui  package
+1. Test class / method
+
+## REST "testMerhabaPackage" test
+### com/airalo/model  package
+1. entity-classes (DTO classes) which match data provided by the REST API in JSON responses
+2. each JSON-response received after sending REST API request is parsed to create instance of matching entity-class
+### com/airalo/api  package
+1. Service classes provide DSL-methods, which directly work with REST API
+### /com/airalo/tests/rest  package
+1. Test class / method
+
+## Configuration
+Configuration parameters are externalized to the **resources/environment.properties** file and are automatically loaded when tests are started.

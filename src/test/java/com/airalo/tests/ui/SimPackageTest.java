@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class SimPackageTests extends BaseUiTest{
+public class SimPackageTest extends BaseUiTest{
 
     @Test
     public void testJapaneseSimPackage(){

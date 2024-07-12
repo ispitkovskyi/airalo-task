@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SimPackageRestTests extends BaseRestTest {
+public class SimPackageRestTest extends BaseRestTest {
 
     @Test
     public void testMerhabaPackage() {

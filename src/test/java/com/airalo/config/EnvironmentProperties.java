@@ -7,6 +7,7 @@ import ru.yandex.qatools.properties.annotations.Resource;
 @Resource.Classpath("environment.properties")
 public class EnvironmentProperties {
     private static EnvironmentProperties environmentProperties;
+
     private EnvironmentProperties() {
         PropertyLoader.populate(this);
     }
@@ -31,9 +32,23 @@ public class EnvironmentProperties {
     @Property("clientSecret")
     public String clientSecret;
 
-    public String getBrowser(){return browser;}
-    public String getHomeUrl(){return homeUrl;}
-    public String getApiUrl(){return apiUrl;}
-    public String getClientId(){return clientId;}
-    public String getClientSecret(){return clientSecret;}
+    public String getBrowser() {
+        return browser;
+    }
+
+    public String getHomeUrl() {
+        return homeUrl;
+    }
+
+    public String getApiUrl() {
+        return apiUrl;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
 }

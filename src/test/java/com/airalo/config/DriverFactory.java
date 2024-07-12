@@ -6,13 +6,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
-    private DriverFactory() { }
+    private DriverFactory() {
+    }
 
     private static final DriverFactory instance = new DriverFactory();
 
     public static DriverFactory getInstance() {
         return instance;
     }
+
     private final ThreadLocal<WebDriver> driver = ThreadLocal.withInitial(() -> {
         String browserType = EnvironmentProperties.get().browser;
 

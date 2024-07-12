@@ -8,8 +8,7 @@ public abstract class BaseRestTest {
     SimsService simsService;
     OrdersService ordersService;
 
-    public BaseRestTest(){
-//        authServicc = new Authentication();
+    public BaseRestTest() {
         simsService = new SimsService();
         ordersService = new OrdersService();
     }

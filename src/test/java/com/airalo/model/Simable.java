@@ -1,22 +1,21 @@
-/*
-package com.airalo.rest;
-import com.fasterxml.jackson.annotation.*;
+package com.airalo.model;
 
-import java.util.LinkedHashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
-import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Data extends BaseEntity{
+public class Simable extends BaseEntity{
 
     @JsonProperty("id")
     private Integer id;
     @JsonProperty("code")
     private String code;
-    @JsonProperty("currency")
-    private String currency;
     @JsonProperty("package_id")
     private String packageId;
+    @JsonProperty("currency")
+    private String currency;
     @JsonProperty("quantity")
     private Integer quantity;
     @JsonProperty("type")
@@ -26,13 +25,13 @@ public class Data extends BaseEntity{
     @JsonProperty("esim_type")
     private String esimType;
     @JsonProperty("validity")
-    private Integer validity;
+    private String validity;
     @JsonProperty("package")
     private String _package;
     @JsonProperty("data")
     private String data;
     @JsonProperty("price")
-    private Double price;
+    private String price;
     @JsonProperty("created_at")
     private String createdAt;
     @JsonProperty("manual_installation")
@@ -47,8 +46,13 @@ public class Data extends BaseEntity{
     private Object voice;
     @JsonProperty("net_price")
     private Double netPrice;
+    @JsonProperty("status")
+    private Status status;
+    @JsonProperty("user")
+    private User user;
     @JsonProperty("sims")
     private List<Sim> sims;
+
 
     @JsonProperty("id")
     public Integer getId() {
@@ -70,16 +74,6 @@ public class Data extends BaseEntity{
         this.code = code;
     }
 
-    @JsonProperty("currency")
-    public String getCurrency() {
-        return currency;
-    }
-
-    @JsonProperty("currency")
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
     @JsonProperty("package_id")
     public String getPackageId() {
         return packageId;
@@ -88,6 +82,16 @@ public class Data extends BaseEntity{
     @JsonProperty("package_id")
     public void setPackageId(String packageId) {
         this.packageId = packageId;
+    }
+
+    @JsonProperty("currency")
+    public String getCurrency() {
+        return currency;
+    }
+
+    @JsonProperty("currency")
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     @JsonProperty("quantity")
@@ -131,12 +135,12 @@ public class Data extends BaseEntity{
     }
 
     @JsonProperty("validity")
-    public Integer getValidity() {
+    public String getValidity() {
         return validity;
     }
 
     @JsonProperty("validity")
-    public void setValidity(Integer validity) {
+    public void setValidity(String validity) {
         this.validity = validity;
     }
 
@@ -161,12 +165,12 @@ public class Data extends BaseEntity{
     }
 
     @JsonProperty("price")
-    public Double getPrice() {
+    public String getPrice() {
         return price;
     }
 
     @JsonProperty("price")
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -240,6 +244,26 @@ public class Data extends BaseEntity{
         this.netPrice = netPrice;
     }
 
+    @JsonProperty("status")
+    public Status getStatus() {
+        return status;
+    }
+
+    @JsonProperty("status")
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    @JsonProperty("user")
+    public User getUser() {
+        return user;
+    }
+
+    @JsonProperty("user")
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @JsonProperty("sims")
     public List<Sim> getSims() {
         return sims;
@@ -251,4 +275,3 @@ public class Data extends BaseEntity{
     }
 
 }
-*/

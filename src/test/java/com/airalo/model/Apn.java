@@ -1,8 +1,5 @@
-package com.airalo.rest;
+package com.airalo.model;
 import com.fasterxml.jackson.annotation.*;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Apn extends BaseEntity{

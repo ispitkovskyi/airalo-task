@@ -1,9 +1,7 @@
-package com.airalo.rest;
+package com.airalo.model;
 
 import com.fasterxml.jackson.annotation.*;
-import org.apache.commons.lang3.StringUtils;
 
-import java.lang.reflect.Field;
 import java.util.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -1,12 +1,10 @@
-package com.airalo.rest;
+package com.airalo.model;
 
-import com.fasterxml.jackson.annotation.*;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Android extends BaseEntity{
+public class Ios extends BaseEntity{
 
     @JsonProperty("apn_type")
     private String apnType;

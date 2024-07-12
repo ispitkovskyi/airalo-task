@@ -14,14 +14,14 @@ public abstract class BaseUiTest {
     protected static StorePage storePage;
 
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() {
         homePage = new HomePage();
         packageDetail = new PackageDetail();
         storePage = new StorePage();
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         DriverFactory.getInstance().removeDriver();
     }
 }

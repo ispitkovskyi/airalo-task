@@ -60,7 +60,7 @@ public class HttpClient {
         return this.token;
     }
 
-    public void setToken(String token) {
+    public void setAccessToken(String token) {
         this.token = token;
     }
 

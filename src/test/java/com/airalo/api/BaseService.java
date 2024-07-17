@@ -43,7 +43,7 @@ public class BaseService<T extends BaseEntity> {
 
         if (StringUtils.isEmpty(client.getAccessToken())) {
             String token = getToken();
-            client.setToken(token);
+            client.setAccessToken(token);
         }
     }
 

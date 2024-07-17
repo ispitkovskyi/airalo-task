@@ -45,7 +45,6 @@ public class DriverFactory {
     }
 
     private WebDriver createFirefoxDriver() {
-//        WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
 
@@ -53,7 +52,6 @@ public class DriverFactory {
     }
 
     private WebDriver createChromeDriver() {
-//        WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("start-maximized");

@@ -1,10 +1,8 @@
 package com.airalo.pages;
 
 import com.airalo.config.DriverFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.base.Function;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -13,7 +11,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
 
-public abstract class BasePage {
+public abstract class BasePage<V> {
 
     protected WebDriver driver;
     protected BasePage(){
@@ -48,14 +46,15 @@ public abstract class BasePage {
         String timeoutMessage = "Page didn't load after timeout seconds.";
         waitForCondition(condition, timeoutMessage, 10);
     }
-    protected void waitForCondition(ExpectedCondition<?> condition){
-        waitForCondition(condition, "Element not found until the timeout", 20);
+    protected V waitForCondition(Function<WebDriver, V> condition){
+        return waitForCondition(condition, "Element not found until the timeout", 20);
     }
-    protected void waitForCondition(ExpectedCondition<?> condition, String timeoutMessage, int timeoutSeconds){
+    protected V waitForCondition(Function<WebDriver, V> condition, String timeoutMessage, int timeoutSeconds){
         FluentWait wait = new FluentWait(driver)
                 .pollingEvery(Duration.ofMillis(400))
                 .withTimeout(Duration.ofSeconds(timeoutSeconds))
-                .withMessage(timeoutMessage);
-        wait.until(condition);
+                .withMessage(timeoutMessage)
+                .ignoring(NoSuchElementException.class);
+        return (V)wait.until(condition);
     }
 }

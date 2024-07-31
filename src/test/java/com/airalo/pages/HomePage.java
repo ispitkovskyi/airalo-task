@@ -22,7 +22,7 @@ public class HomePage extends BasePage {
     public HomePage goTo(){
         driver.get(EnvironmentProperties.get().getHomeUrl());
         waitForPageLoaded();
-        if(advertModal.isDisplayed()) {
+        if((Boolean)waitForCondition(driver -> advertModal.isDisplayed())) {
             advertModal.findElement(By.cssSelector("[data-testid='close-button']")).click();
         }
         return this;
